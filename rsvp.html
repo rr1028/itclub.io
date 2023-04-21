@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							
+							<li><a href="#" class="button">Profile</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+			<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Scheduler</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even){background-color: #f2f2f2}
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Event Scheduler</h1>
+
+  <label for="event">Event:</label>
+  <input type="text" id="event">
+
+  <label for="date">Date:</label>
+  <input type="date" id="date">
+
+  <label for="time">Time:</label>
+  <input type="time" id="time">
+
+  <button onclick="addEvent()">Add Event</button>
+
+  <table id="eventTable">
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+  </table>
+
+  <script>
+    // Initialize the events array
+    let events = [];
+
+    // Function to add a new event to the table
+    function addEvent() {
+      // Get the event, date, and time inputs
+      let event = document.getElementById("event").value;
+      let date = document.getElementById("date").value;
+      let time = document.getElementById("time").value;
+
+      // Add the event to the array
+      events.push({
+        event: event,
+        date: date,
+        time: time
+      });
+
+      // Clear the inputs
+      document.getElementById("event").value = "";
+      document.getElementById("date").value = "";
+      document.getElementById("time").value = "";
+
+      // Update the table
+      updateTable();
+    }
+
+    // Function to delete an event from the table
+    function deleteEvent(index) {
+      // Remove the event from the array
+      events.splice(index, 1);
+
+      // Update the table
+      updateTable();
+    }
+
+    // Function to update the table with the current events
+    function updateTable() {
+      // Get the table element
+      let table = document.getElementById("eventTable");
+	  
+
+      // Clear the table
+      table.innerHTML = "";
+
+      // Add the table header
+      let header = table.createTHead();
+      let row = header.insertRow();
+      let eventHeader = row.insertCell(0);
+      let dateHeader = row.insertCell(1);
+      let timeHeader = row.insertCell(2);
+      let deleteHeader = row.insertCell(3);
+      eventHeader.innerHTML = "<b>Event</b>";
+      dateHeader.innerHTML = "<b>Date</b>";
+      timeHeader.innerHTML = "<b>Time</b>";
+      deleteHeader.innerHTML = "";
+
+      // Add the events to the table
+      let tbody = table.createTBody();
+      for (let i = 0; i < events.length; i++) {
+        let row = tbody.insertRow();
+        let eventCell = row.insertCell(0);
+        let dateCell = row.insertCell(1);
+        let timeCell = row.insertCell(2);
+        let deleteCell = row.insertCell(3);
+        eventCell.innerHTML = events[i].event;
+        dateCell.innerHTML = events[i].date;
+        timeCell.innerHTML = events[i].time;
+        deleteCell.innerHTML = "<button onclick='deleteEvent(" + i + ")'>Delete</button>";
+		
+
+      }
+    }
+	
+  </script>
+</body>
+
+			
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

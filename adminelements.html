@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="club.js"></script>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							
+							<li><a href="#" class="button">Profile</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Clubs & Events</h2>
+						<p>Just an assorted selection of elements.</p>
+					
+
+							<!-- Lists -->
+							<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Clubs</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+        font-size: 32px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+      }
+      .club-input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .add-club {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .remove-club {
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clubs</h1>
+    <ul id="club-list">
+      <li>Coding</li>
+      <li>Music and Dance</li>
+      <li>Sports</li>
+      <li>Photography</li>
+    </ul>
+    <div>
+      <input type="text" id="new-club" class="club-input" placeholder="Enter a new club">
+      <button id="add-club" class="add-club">Add Club</button>
+    </div>
+    <div>
+      <button id="remove-club" class="remove-club">Remove Club</button>
+    </div>
+    <script>
+      const clubList = document.getElementById('club-list');
+      const addClubBtn = document.getElementById('add-club');
+      const removeClubBtn = document.getElementById('remove-club');
+      const newClubInput = document.getElementById('new-club');
+
+      // Add new club to the list
+      addClubBtn.addEventListener('click', () => {
+        const newClub = document.createElement('li');
+        newClub.textContent = newClubInput.value;
+        clubList.appendChild(newClub);
+        newClubInput.value = '';
+      });
+
+      // Remove last club from the list
+      removeClubBtn.addEventListener('click', () => {
+        const lastClub = clubList.lastElementChild;
+        if (lastClub) {
+          clubList.removeChild(lastClub);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Club Members</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+        font-size: 32px;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #ddd;
+        border-radius: 5px;
+      }
+      .member-input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .add-member {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .remove-member {
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Club Members</h1>
+    <div>
+      <h2>Coding Club</h2>
+      <ul id="coding-club-members">
+        <li>John</li>
+        <li>Sara</li>
+        <li>Tom</li>
+      </ul>
+      <div>
+        <input type="text" id="coding-club-member" class="member-input" placeholder="Enter a new member">
+        <button id="add-coding-club-member" class="add-member">Add Member</button>
+      </div>
+      <div>
+        <button id="remove-coding-club-member" class="remove-member">Remove Member</button>
+      </div>
+    </div>
+    <div>
+      <h2>Music and Dance Club</h2>
+      <ul id="music-dance-club-members">
+        <li>Jane</li>
+        <li>Bob</li>
+        <li>Amy</li>
+      </ul>
+      <div>
+        <input type="text" id="music-dance-club-member" class="member-input" placeholder="Enter a new member">
+        <button id="add-music-dance-club-member" class="add-member">Add Member</button>
+      </div>
+      <div>
+        <button id="remove-music-dance-club-member" class="remove-member">Remove Member</button>
+      </div>
+    </div>
+    <script>
+      const codingClubMembers = document.getElementById('coding-club-members');
+      const addCodingClubMemberBtn = document.getElementById('add-coding-club-member');
+      const removeCodingClubMemberBtn = document.getElementById('remove-coding-club-member');
+      const codingClubMemberInput = document.getElementById('coding-club-member');
+
+      const musicDanceClubMembers = document.getElementById('music-dance-club-members');
+      const addMusicDanceClubMemberBtn = document.getElementById('add-music-dance-club-member');
+      const removeMusicDanceClubMemberBtn = document.getElementById('remove-music-dance-club-member');
+      const musicDanceClubMemberInput = document.getElementById('music-dance-club-member');
+
+      // Add new member to the coding club
+      addCodingClubMemberBtn.addEventListener('click', () => {
+        const newMember = document.createElement('li');
+        newMember.textContent = coding
+
+
+								
+
+							
+
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+              <li><a href="rsvp-copy.html">EVENTS</a></li>
+							
+							<li><a href="index.html" class="button">Logout</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>Clubs & Events</h2>
+						<p>Just an assorted selection of elements.</p>
+					
+
+							<!-- Lists -->
+							<!DOCTYPE html>
+              <!DOCTYPE html>
+              <html>
+                <head>
+                  <title>Club Management</title>
+                </head>
+                <body>
+                  <h1>Club Management</h1>
+              
+                  <h2>Clubs</h2>
+                  <ul id="clubList"></ul>
+              
+                  <form>
+                    <label for="clubName">Club Name:</label>
+                    <input type="text" id="clubName" name="clubName">
+                    <button type="button" onclick="addClub()">Add Club</button>
+                  </form>
+              
+                  <script>
+                    // initialize an empty array to hold the club names
+                    let clubs = [];
+              
+                    // function to add a club to the list
+                    function addClub() {
+                      // get the club name from the input field
+                      let clubName = document.getElementById("clubName").value;
+              
+                      // add the club name to the array
+                      clubs.push(clubName);
+              
+                      // clear the input field
+                      document.getElementById("clubName").value = "";
+              
+                      // update the club list
+                      updateClubList();
+                    }
+              
+                    // function to remove a club from the list
+                    function removeClub(index) {
+                      // remove the club from the array
+                      clubs.splice(index, 1);
+              
+                      // update the club list
+                      updateClubList();
+                    }
+              
+                    // function to update the club list
+                    function updateClubList() {
+                      // get the club list element
+                      let clubList = document.getElementById("clubList");
+              
+                      // clear the current list
+                      clubList.innerHTML = "";
+              
+                      // add each club to the list
+                      for (let i = 0; i < clubs.length; i++) {
+                        let club = clubs[i];
+              
+                        // create a list item element for the club
+                        let li = document.createElement("li");
+              
+                        // add the club name to the list item
+                        li.textContent = club;
+              
+                        // add a button to remove the club
+                        let removeButton = document.createElement("button");
+                        removeButton.textContent = "Remove";
+                        removeButton.onclick = function() {
+                          removeClub(i);
+                        };
+                        li.appendChild(removeButton);
+              
+                        // add the list item to the list
+                        clubList.appendChild(li);
+                      }
+                    }
+                  </script>
+              
+                  <h2>Club Members</h2>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Club</th>
+                        <th>Members</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="memberTableBody"></tbody>
+                  </table>
+              
+                  <form>
+                    <label for="memberName">Member Name:</label>
+                    <input type="text" id="memberName" name="memberName">
+                    <label for="clubSelect">Club:</label>
+                    <select id="clubSelect" name="clubSelect"></select>
+                    <button type="button" onclick="addMember()">Add Member</button>
+                  </form>
+              
+                  <script>
+                    // initialize an empty object to hold the club members
+                    let members = {};
+              
+                    // function to add a member to a club
+                    function addMember() {
+                      // get the member name from the input field
+                      let memberName = document.getElementById("memberName").value;
+              
+                      // get the selected club from the select element
+                      let clubSelect = document.getElementById("clubSelect");
+                      let clubName = clubSelect.options[clubSelect.selectedIndex].value;
+              
+                        // add the member to the club
+  if (!members[clubName]) {
+    members[clubName] = [];
+  }
+  members[clubName].push(memberName);
+
+  // clear the input fields
+  document.getElementById("memberName").value = "";
+  document.getElementById("clubSelect").selectedIndex = 0;
+
+  // update the member table
+  updateMemberTable();
+}
+
+// function to remove a member from a club
+function removeMember(clubName, index) {
+  // remove the member from the club
+  members[clubName].splice(index, 1);
+
+  // update the member table
+  updateMemberTable();
+}
+
+// function to update the member table
+function updateMemberTable() {
+  // get the member table body element
+  let memberTableBody = document.getElementById("memberTableBody");
+
+  // clear the current table
+  memberTableBody.innerHTML = "";
+
+  // add each club and its members to the table
+  for (let clubName in members) {
+    let clubMembers = members[clubName];
+
+    // create a row element for the club
+    let clubRow = document.createElement("tr");
+
+    // add the club name to the row
+    let clubNameCell = document.createElement("td");
+    clubNameCell.textContent = clubName;
+    clubRow.appendChild(clubNameCell);
+
+    // create a cell for the club's members
+    let clubMembersCell = document.createElement("td");
+
+    // add each member to the cell
+    for (let i = 0; i < clubMembers.length; i++) {
+      let member = clubMembers[i];
+
+      // create a span element for the member
+      let memberSpan = document.createElement("span");
+      memberSpan.textContent = member;
+
+      // add a button to remove the member
+      let removeButton = document.createElement("button");
+      removeButton.textContent = "Remove";
+      removeButton.onclick = function() {
+        removeMember(clubName, i);
+      };
+      memberSpan.appendChild(removeButton);
+
+      // add the member to the cell
+      clubMembersCell.appendChild(memberSpan);
+    }
+
+    // add the cell to the row
+    clubRow.appendChild(clubMembersCell);
+
+    // create a cell for the action buttons
+    let actionCell = document.createElement("td");
+
+    // add a button to remove the club
+    let removeClubButton = document.createElement("button");
+    removeClubButton.textContent = "Remove Club";
+    removeClubButton.onclick = function() {
+      removeClub(clubName);
+    };
+    actionCell.appendChild(removeClubButton);
+
+    // add a button to add a member to the club
+    let addMemberButton = document.createElement("button");
+    addMemberButton.textContent = "Add Member";
+    addMemberButton.onclick = function() {
+      document.getElementById("memberName").focus();
+    };
+    actionCell.appendChild(addMemberButton);
+
+    // add the cell to the row
+    clubRow.appendChild(actionCell);
+
+    // add the row to the table
+    memberTableBody.appendChild(clubRow);
+  }
+
+  // update the club select element with the current list of clubs
+  let clubSelect = document.getElementById("clubSelect");
+  clubSelect.innerHTML = "";
+  let option = document.createElement("option");
+  option.value = "";
+  option.textContent = "Select a club...";
+  clubSelect.appendChild(option);
+  for (let i = 0; i < clubs.length; i++) {
+    let club = clubs[i];
+    let option = document.createElement("option");
+    option.value = club;
+    option.textContent = club;
+    clubSelect.appendChild(option);
+  }
+}
+
+// initialize the club list and member table
+updateClubList();
+updateMemberTable();
+</script>
+
+              
+
+
+								
+
+							
+
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html"></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							
+							<li><a href="#" class="button">Profile</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+			<!DOCTYPE html>
+<html>
+  <head>
+    <title>Updated Event Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even){background-color: #f2f2f2}
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Updated Event Table</h1>
+    <table id="eventTable">
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </table>
+    <script>
+      // Get the updated events from the query string parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const updatedEvents = JSON.parse(decodeURIComponent(urlParams.get('updatedEvents')));
+
+      // Populate the table with the updated events
+      let table = document.getElementById("eventTable");
+      for (let i = 0; i < updatedEvents.length; i++) {
+        let row = table.insertRow();
+        let eventCell = row.insertCell(0);
+        let dateCell = row.insertCell(1);
+        let timeCell = row.insertCell(2);
+        eventCell.innerHTML = updatedEvents[i].event;
+        dateCell.innerHTML = updatedEvents[i].date;
+        timeCell.innerHTML = updatedEvents[i].time;
+      }
+    </script>
+  </body>
+</html>
+
+
+			
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
